@@ -163,7 +163,7 @@ span.price {
             <label for="cname">Name on Card</label>
             <input type="text" id="cname" name="cardname" placeholder="Samuel Bogale Worku"required>
             <label for="ccn">Credit Card Number:</label>
-            <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
+            <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required minlength="16">
             
            
            
@@ -278,6 +278,7 @@ span.price {
 <input type="submit" value="Paynow" class="btn">
 
 
+
   <script>
   function showMap() {
     var mapFrame = document.getElementById("inlineFrameExample");
@@ -297,7 +298,7 @@ span.price {
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
-       
+  
             
            
 </body>
