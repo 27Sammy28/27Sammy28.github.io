@@ -1,10 +1,25 @@
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+
+
+
+
+
 body {
+  background-image: url('paymenow.png');
+
   font-family: Arial;
   font-size: 17px;
   padding: 8px;
@@ -111,7 +126,7 @@ span.price {
 </head>
 <body>
 
-<h2>Payment method</h2>
+<h1>    <p style="color:rgb(25, 0, 255);">  Payment method</p> </h1>
 <div class="row">
   <div class="col-75">
     <div class="container">
@@ -119,14 +134,14 @@ span.price {
       
         <div class="row">
           <div class="col-50">
-            <h3>Name of the Address</h3>
+            <h2>Personal Information </h2>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label > 
            <input type="text" class="Full-name" placeholder="Full name" required minlength="10 ">
-                <label for="email"><i class="fa fa-envelope"></i> Email</label>
             
-    
-    
-<input type="email" id="email" pattern=".+@example\.com" size="30" required />
+                <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                <input type="text" id="email" name="email" placeholder="sam@example.com" required minlength="10">
+                                           
+                        
 
     
     
@@ -136,7 +151,7 @@ span.price {
           </div>
 
           <div class="col-50">
-            <h3>Payment</h3>
+            <h2>Payment</h2>
             <label for="fname">Accepted Cards</label>
             <div class="icon-container">
               <i class="fa fa-cc-visa" style="color:navy;"></i>
@@ -145,17 +160,94 @@ span.price {
               <i class="fa fa-cc-discover" style="color:orange;"></i>
             </div>
             <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <input type="text" id="cname" name="cardname" placeholder="Samuel Bogale Worku"required>
             <label for="ccnum">Credit card number</label>
             <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required minlength="16 ">
-            <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September" required>
-            <div class="row">
-              <div class="col-50">
-                <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2024"required>
-              </div>
-              <div class="col-50">
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           <label for="expmonth">Exp Month and year</label>
+          
+
+<select class="form-select" id="year" name="year" required>
+    <option value="">year</option>
+    <option value="2023">2023</option>
+    <option value="2023">2024</option>
+    <option value="2023">2025</option>
+    <option value="2023">2026</option>
+    <option value="2023">2027</option>
+    <option value="2023">2028</option>
+</select>
+
+
+
+
+<select class="form-select" id="month" name="month"required>
+    <option value="">month</option>
+    <option value="january">(01) Jan</option>
+    <option value="february">(02) Feb</option>
+    <option value="march">(03) Mar</option>
+    <option value="april">(04) Apr</option>
+    <option value="may">(05) May</option>
+    <option value="june">(06) Jun</option>
+    <option value="july">(07) Jul</option>
+    <option value="august">(08) Aug</option>
+    <option value="september">(09) Sep</option>
+    <option value="october">(10) Oct</option>
+    <option value="november">(11) Nov</option>
+    <option value="december">(12) Dec</option>
+</select>
+
+
+        <select class="form-select" id="day" name="day"required>
+    <option value="">day</option>
+    <option value="01">01</option>
+    <option value="02">02</option>
+    <option value="03">03</option>
+    <option value="04">04</option>
+    <option value="05">05</option>
+    <option value="06">06</option>
+    <option value="07">07</option>
+    <option value="08">08</option>
+    <option value="09">09</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>
+    <option value="28">28</option>
+    <option value="29">29</option>
+    <option value="30">30</option>
+    <option value="31">31</option>
+</select>
+        
+        
+           
+           
               </div>
             </div>
           </div>
@@ -165,7 +257,7 @@ span.price {
        </label>
        
        
-       <h1> Methods  of delivery</h1>
+       <h1> <p style="color:rgb(25, 0, 255);"> Methods  of delivery</p> </h1>
 
 
   
@@ -178,9 +270,13 @@ span.price {
   </select>
   
   <br>
-  <input type="submit">
+   
   <br>
   
+</label>
+<input type="submit" value="Continue to checkout" class="btn">
+
+
   <script>
   function showMap() {
     var mapFrame = document.getElementById("inlineFrameExample");
@@ -207,4 +303,12 @@ span.price {
            
 </body>
 </html>
+
+
+        
+        
+        
+
+
+
 
