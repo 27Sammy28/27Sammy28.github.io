@@ -1,141 +1,171 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Payment System</title>
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-      /* Add your existing CSS styling here */
-
-      /* Media query for screens smaller than 600px */
-      @media (max-width: 600px) {
-          /* CSS rules for smaller screens */
-      }
-  </style>
-
-
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-    #map {
-      height: 400px;
-      width: 100%;
-    }
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
 
-    body {
-      background-image: url('paymenow.png');
-      color: rgb(3, 3, 3);
-    }
+* {
+  box-sizing: border-box;
+}
 
-    h1 {
-      background-color: rgb(221, 221, 221);
-      color: rgb(255, 0, 0);
-    }
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
 
-    div {
-      background-color: rgb(82, 58, 104);
-      color: rgb(248, 7, 7);
-    }
-  </style> 
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
 </head>
 <body>
 
-
-  
-
-  <h1>Please fill the form correctly and upload it </h1>
-
-
-  <form action="/action_page.php" method="post">
-
-  
-         <form class="credit-card">
-          <div class="form-header">
-            <h2 class="title">Credit card detail</h2>
-          </div>
-    
-          <div class="form-body">
-           
-           <!---Name-->
-           <input type="text" class="Full-name" placeholder="Full name" required minlength="10 ">
-    
-           <br>
-
-            <!-- Card Number -->
-            <input type="text" class="card-number" placeholder="Card Number" required minlength="16 ">
-    
-            <!-- Date Field -->
-            <div class="date-field">
-              <div class="month">
-                <select name="Month">
-                  <option value="january">January</option>
-                  <option value="february">February</option>
-                  <option value="march">March</option>
-                  <option value="april">April</option>
-                  <option value="may">May</option>
-                  <option value="june">June</option>
-                  <option value="july">July</option>
-                  <option value="august">August</option>
-                  <option value="september">September</option>
-                  <option value="october">October</option>
-                  <option value="november">November</option>
-                  <option value="december">December</option>
-                </select>
-              </div>
-              <div class="year">
-                <select name="Year">
-                  <option value="2023">2023</option>
-                  <option value="2024">2024</option>
-                  <option value="2025">2025</option>
-                  <option value="2026">2026</option>
-                  <option value="2027">2027</option>
-                  <option value="2028">2028</option>
-             
-                </select>
-              </div>
-            </div>
-    
-            <!-- Card Verification Field -->
-            <div class="card-verification">
-              <div class="cvv-input">
-                <input type="text" placeholder="CVV" required  minlength="6">
-              </div>
-              <div class="cvv-details">
-                 </div>
-            </div>
-    
-       
-
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-   <br>
-  <div class="container" style="background-color:#ffff">
-
-    <br>
-
-    <p>Please upload the screenshot of your payment:</p>
-
-    <form action="/action_page.php">
+<h2>Payment method</h2>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/action_page.php">
       
-      <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" required />
-
-    </form>  
-  
+        <div class="row">
+          <div class="col-50">
+            <h3>Name of the Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label > 
+           <input type="text" class="Full-name" placeholder="Full name" required minlength="10 ">
+                <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            
     
-  </form>
-  
-</form>
+    
+<input type="email" id="email" pattern=".+@example\.com" size="30" required />
 
+    
+    
+          
 
+              </div>
+          </div>
 
-
-
-
-
-  
-  <h2> Methods  of delivery</h2>
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required minlength="16 ">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September" required>
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2024"required>
+              </div>
+              <div class="col-50">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+       
+       </label>
+       
+       
+       <h1> Methods  of delivery</h1>
 
 
   
@@ -170,67 +200,11 @@
 <title>Rating Form</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
-<div class="container">
-  <h1>How do you like our system?</h1>
 
-  <p class="question"></p>
-
-  <div class="rating-stars">
-    <input type="radio" id="star5" name="rating" value="5">
-    <label for="star5">😃</label>
-    <input type="radio" id="star4" name="rating" value="4">
-    <label for="star4">😊</label>
-    <input type="radio" id="star3" name="rating" value="3">
-    <label for="star3">😐 </label>
-    <input type="radio" id="star2" name="rating" value="2">
-    <label for="star2">😔</label>
-    <input type="radio" id="star1" name="rating" value="1">
-    <label for="star1">😡</label>
-  </div>
-  <textarea id="comment" placeholder="Enter your comment"></textarea>
-
-  <button id="submit">Submit</button>
-</div>
-
-<script src="script.js"></script>
-<script src="js/main.js"></script>
-<script src="js/jquery-min.js"></script>
-
-
-<script>
-
-
-const submitButton = document.getElementById('submit');
-submitButton.addEventListener('click', function(e) {
-  e.preventDefault();
-
-  const rating = document.querySelector('input[name="rating"]:checked').value;
-  const comment = document.getElementById('comment').value;
-
-  if (rating && comment && comment.length > 25) {
-
-    // Send notification email with the rating and comment
-    sendNotificationEmail(rating, comment);
-
-    // Display success message
-    alert('Thank you for your comment!');
-
-    // Clear the form
-    document.querySelector('input[name="rating"]:checked').checked = false;
-    document.getElementById('comment').value = '';
-  } else {
-    alert(' Select a rating and please  enter a real comments.');
-  }
-});
-
-function sendNotificationEmail(rating, comment) {
-  // Replace this with your own implementation to send an email
-  console.log(`Notification email sent: Rating: ${rating}, Comment: ${comment}`);
-}
-
-
-
-</script>
+       
+       
+      
+           
 </body>
 </html>
+
