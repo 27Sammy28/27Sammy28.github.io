@@ -130,8 +130,10 @@ span.price {
 <div class="row">
   <div class="col-75">
     <div class="container">
-      <form action="/action_page.php">
       
+      <form class="modal-content" action="/action_page2.php">
+       
+
         <div class="row">
           <div class="col-50">
             <h2>Personal Information </h2>
@@ -258,17 +260,11 @@ span.price {
        </label>
        
        
-       <h1> <p style="color:rgb(25, 0, 255);"> Methods  of delivery</p> </h1>
-
+      
 
   
 
 
-  <select id="deliveryMethod" name="deliveryMethod" onchange="showMap()" required>
-    <option value="">Select an option</option>  
-    <option value="pickup">Pickup</option>  
-    <option value="delivery">Delivery</option>
-  </select>
   
   <br>
    
@@ -279,25 +275,7 @@ span.price {
 
 
 
-  <script>
-  function showMap() {
-    var mapFrame = document.getElementById("inlineFrameExample");
-    var deliveryMethod = document.getElementById("deliveryMethod").value;
-    
-    if (deliveryMethod === "delivery") {
-      mapFrame.style.display = "block";
-    } else {
-      mapFrame.style.display = "none";
-    }
-  }
-  </script>
   
-  <iframe id="inlineFrameExample" title="Inline Frame Example" width="800" height="500" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik" style="display: none;"></iframe>
-
-
-<link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-
   
             
            
