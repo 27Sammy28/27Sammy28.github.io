@@ -136,7 +136,7 @@ span.price {
   <div class="col-75">
     <div class="container">
       
-      <form class="modal-content" action="/home/samuel/Documents/online-food-order-system/index.html">
+      <form class="modal-content" action="/action_page2.php">
        
 
         <div class="row">
@@ -283,7 +283,7 @@ span.price {
   <div class="col-75">
     <div class="container">
       
-      <form class="modal-content" action="/home/samuel/Documents/online-food-order-system/index.html">
+      <form class="modal-content" action="/action_page2.php">
         <!-- Your existing form elements here -->
 
         <div class="row">
@@ -308,7 +308,31 @@ span.price {
 </div>
 
 
-   
+
+<script>
+  function validateForm() {
+    var fullName = document.querySelector('.Full-name').value;
+    var email = document.getElementById('email').value;
+    var cardName = document.getElementById('cname').value;
+    var cardNumber = document.getElementById('ccn').value;
+
+    // Check if any form field is empty
+    if (fullName === "" || email === "" || cardName === "" || cardNumber === "") {
+      document.getElementById('formValidationMessage').style.display = 'block';
+      return false; // Prevent form submission
+    } else {
+      document.getElementById('formValidationMessage').style.display = 'none';
+
+      // Display payment success message
+      document.getElementById('paymentMessage').style.display = 'block';
+      return true; // Allow form submission
+    }
+  }
+</script>
+  
+  
+<a href="index.html" class="btn">Go Back</a>
+            
            
 </body>
 </html>
