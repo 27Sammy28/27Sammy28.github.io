@@ -9,9 +9,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style><style>
 
 
 
@@ -112,6 +112,11 @@ span.price {
   float: right;
   color: grey;
 }
+.paynow-container {
+  width: 200px; /* Adjust the width as per your preference */
+  margin: 0 auto; /* Center the container horizontally (optional) */
+}
+
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
 @media (max-width: 800px) {
@@ -131,7 +136,7 @@ span.price {
   <div class="col-75">
     <div class="container">
       
-      <form class="modal-content" action="/action_page2.php">
+      <form class="modal-content" action="/home/samuel/Documents/online-food-order-system/index.html">
        
 
         <div class="row">
@@ -271,13 +276,39 @@ span.price {
   <br>
   
 </label>
-<input type="submit" value="Paynow" class="btn">
 
 
+<h1> <p style="color:rgb(25, 0, 255);">Payment method</p> </h1>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      
+      <form class="modal-content" action="/home/samuel/Documents/online-food-order-system/index.html">
+        <!-- Your existing form elements here -->
 
-  
-  
-            
+        <div class="row">
+          <!-- Your existing form structure here -->
+        </div>
+
+        <!-- Pay Now button with onClick event -->
+        <div class="paynow-container">
+          <input type="submit" value="Pay Now" class="btn" onClick="yourFunction()">
+
+
+        </div>
+      </form>
+
+      <!-- Payment Message Container -->
+      <div id="paymentMessage" style="display: none; margin-top: 20px; color: green; font-weight: bold;">
+        Your payment has been made.
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+   
            
 </body>
 </html>
